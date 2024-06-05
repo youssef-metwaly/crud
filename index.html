@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product </title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+
+
+    <div class="w-75 mx-auto bg-info rounded p-3 m-5">
+      <h1 class="text-center">Product System</h1>
+
+      <div>
+        <label for="productNameInput">Product Name</label>
+        <input
+          oninput="validationName()"
+          class="form-control"
+          type="text"
+          placeholder="enter the name"
+          id="productNameInput"
+        />
+        <p id="messageName" class="alert alert-danger d-none my-2">
+          invalid pattern
+        </p>
+      </div>
+      <div>
+        <label for="productPriceInput">Product Price</label>
+        <input
+          class="form-control"
+          type="number"
+          placeholder="enter the price"
+          id="productPriceInput"
+        />
+      </div>
+      <div>
+        <label for="productCategoryInput">Product Category</label>
+        <input
+          class="form-control"
+          type="text"
+          placeholder="enter the category"
+          id="productCategoryInput"
+        />
+      </div>
+      <div>
+        <label for="productDescriptionInput">Product Description</label>
+        <textarea
+          class="form-control"
+          placeholder="enter the description"
+          id="productDescriptionInput"
+        ></textarea>
+      </div>
+
+      <button
+        onclick=" addProduct(); "
+        class="btn btn-primary mt-3 w-100"
+        id="addBtn">
+        Add Product
+      </button>
+      <button
+        onclick=" updateProduct(); "
+        class="btn btn-warning mt-3 w-100 d-none"
+        id="updateBtn">
+        Update Product
+      </button>
+
+      <input
+        id="searchInput"
+        oninput="search()"
+        type="search"
+        class="form-control mx-auto my-3 w-75"
+        placeholder="Search by name..."
+      />
+    </div>
+
+    <div class="w-75 mx-auto py-5">
+      <table class="table text-center">
+        <thead>
+          <th>index</th>
+          <th>name</th>
+          <th>price</th>
+          <th>category</th>
+          <th>Description</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
